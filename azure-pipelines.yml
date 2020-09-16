@@ -18,3 +18,9 @@ steps:
 - script: pwd
 - script: cd .. && pwd
 - script: cd / && ls
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    testRunTitle: 'trial'
